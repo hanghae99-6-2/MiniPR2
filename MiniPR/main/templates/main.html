@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    <title>차좀타볼카</title>
+
+    <!— css파일의 경로 설정 —>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css')}}">
+
+    <!— script 파일의 경로 설정  —>
+    <script src="{{ url_for('static', filename='main.js')}}"></script>\
+
+    <link rel="shortcut icon" href="main/static/favicon.ico">
+    <link rel="icon" href="main/static/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+
+</head>
+<body>
+<div class="main1">
+    <div class="main1_left">
+        <img src="https://www.chevrolet.co.kr/httpobject/images/common/chevrolet.jpg" width=300px>
+    </div>
+    <div class="main1_right">
+        <img src="https://www.chevrolet.co.kr/httpobject/images/campaign/2022-newstart-raq/index/index_h1.jpg"
+             width=740px>
+    </div>
+</div>
+<div class="main2">
+    <section class="main" style="margin-top: 50px;">
+        <nav class="tag">
+            <div>
+                <button onclick="location.href='/main'" type="button" class="btn btn-light" id="all">전체</button>
+                <button onclick="location.href='/main/sedan'" type="button" class="btn btn-light" id="sedan">#세단
+                </button>
+                <button onclick="location.href='/main/hatchback'" type="button" class="btn btn-light" id="hatchback">
+                    #해치백
+                </button>
+                <button onclick="location.href='/main/suvv'" type="button" class="btn btn-light" id="suv">#SUV</button>
+                <button onclick="location.href='/main/coupe'" type="button" class="btn btn-light" id="coupe">#쿠페
+                </button>
+                <button onclick="location.href='/main/truck'" type="button" class="btn btn-light" id="truck">#트럭
+                </button>
+            </div>
+        </nav>
+    </section>
+</div>
+
+<div class="main3" style="margin-top: 50px;">
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"
+                    aria-label="Slide 6"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6"
+                    aria-label="Slide 7"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7"
+                    aria-label="Slide 8"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="8"
+                    aria-label="Slide 9"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+                <h5 align="left" id="carname1">[#세단]2022 쉐보레 말리부(1/9)</h5>
+                <img src="https://search.pstatic.net/common?type=f&size=298x140&quality=95&direct=true&ttype=input&src=https%3A%2F%2Fimgauto-phinf.pstatic.net%2F20210730_4%2Fauto_1627614609433sFdLY_PNG%2F20210730120956_gAD3tXkJ.png"
+                     class="d-block w-100" alt="..." id="img-rtan1">
+                <div class="carousel-caption d-none d-md-block">
+                    <button style="float: right;" id="carbackname1" onclick="location.href='/community'" class="btn btn-link">2022 쉐보레 말리부 자세히보기</button>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <h5 align="left" id="carname2">[#해치백]2022 쉐보레 볼트EV(2/9)</h5>
+                <img src="https://search.pstatic.net/common?quality=75&direct=true&src=https%3A%2F%2Fimgauto-phinf.pstatic.net%2F20210811_95%2Fauto_1628645625080eafi7_PNG%2F20210811103322_kc5Q7fW3.png"
+                     class="d-block w-100" alt="..." id="img-rtan2">
+                <div class="carousel-caption d-none d-md-block">
+                    <button style="float: right;" id="carbackname9" onclick="location.href='/community/boltEV'" class="btn btn-link">2022 쉐보레 볼트EV 자세히보기
+                    </button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <h5 align="left" id="carname3">[#해치백]2022 쉐보레 스파크(3/9)</h5>
+                <img src="https://search.pstatic.net/common?quality=75&direct=true&src=https%3A%2F%2Fimgauto-phinf.pstatic.net%2F20210730_48%2Fauto_16276141785543E5Sz_PNG%2F20210730120243_imLcTkGD.png"
+                     class="d-block w-100" alt="..." id="img-rtan3">
+                <div class="carousel-caption d-none d-md-block">
+                    <button style="float: right;" id="carbackname9" onclick="location.href='/community/spark'" class="btn btn-link">2022 쉐보레 스파크 자세히보기
+                    </button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <h5 align="left" id="carname4">[#SUV]2022 쉐보레 트래버스(4/9)</h5>
+                <img src="https://search.pstatic.net/common?type=f&size=298x140&quality=95&direct=true&ttype=input&src=https%3A%2F%2Fimgauto-phinf.pstatic.net%2F20200317_149%2Fauto_158441215563534vJP_PNG%2F20200317112906_KlEldE82.png"
+                     class="d-block w-100" alt="..." id="img-rtan4">
+                <div class="carousel-caption d-none d-md-block">
+                    <button style="float: right;" id="carbackname9" onclick="location.href='/community/treverse'" class="btn btn-link">2022 쉐보레 트래버스 자세히보기
+                    </button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <h5 align="left" id="carname5">[#SUV]2022 쉐보레 볼트EUV(5/9)</h5>
+                <img src="https://search.pstatic.net/common?type=f&size=298x140&quality=95&direct=true&ttype=input&src=https%3A%2F%2Fimgauto-phinf.pstatic.net%2F20210811_188%2Fauto_1628646523272EVtVT_PNG%2F20210811104832_sEcRInMr.png"
+                     class="d-block w-100" alt="..." id="img-rtan5">
+                <div class="carousel-caption d-none d-md-block">
+                    <button style="float: right;" id="carbackname9" onclick="location.href='/community/bolteuv'" class="btn btn-link">2022 쉐보레 볼트EUV 자세히보기
+                    </button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <h5 align="left" id="carname6">[#SUV]2022 쉐보레 트랙스(6/9)</h5>
+                <img src="https://search.pstatic.net/common?type=f&size=298x140&quality=95&direct=true&ttype=input&src=https%3A%2F%2Fimgauto-phinf.pstatic.net%2F20210118_103%2Fauto_1610958494862sN41i_PNG%2F20210118172759_OfNcQMKz.png"
+                     class="d-block w-100" alt="..." id="img-rtan6">
+                <div class="carousel-caption d-none d-md-block">
+                    <button style="float: right;" id="carbackname9" onclick="location.href='/community/trax'" class="btn btn-link">2022 쉐보레 트랙스 자세히보기
+                    </button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <h5 align="left" id="carname7">[#SUV]2022 쉐보레 트레일블레이저(7/9)</h5>
+                <img src="https://search.pstatic.net/common?type=f&size=298x140&quality=95&direct=true&ttype=input&src=https%3A%2F%2Fimgauto-phinf.pstatic.net%2F20201221_10%2Fauto_1608521041592E4DT8_PNG%2F20201221122342_sIHByu3s.png"
+                     class="d-block w-100" alt="..." id="img-rtan7">
+                <div class="carousel-caption d-none d-md-block">
+                    <button style="float: right;" id="carbackname9" onclick="location.href='/community/treble'" class="btn btn-link">2022 쉐보레 트레일블레이저 자세히보기
+                    </button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <h5 align="left" id="carname8">[#쿠페]2021 쉐보레 카마로(8/9)</h5>
+                <img src="https://search.pstatic.net/common?type=f&size=298x140&quality=95&direct=true&ttype=input&src=https%3A%2F%2Fimgauto-phinf.pstatic.net%2F20201026_28%2Fauto_1603678707125ddP3Y_PNG%2F20201026111817_QpzGDbPw.png"
+                     class="d-block w-100" alt="..." id="img-rtan8">
+                <div class="carousel-caption d-none d-md-block">
+                    <button style="float: right;" id="carbackname9" onclick="location.href='/community/camaro'" class="btn btn-link">2021 쉐보레 카마로 자세히보기
+                    </button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <h5 align="left" id="carname9">[#트럭]2022 쉐보레 콜로라도(9/9)</h5>
+                <img src="https://search.pstatic.net/common?type=f&size=298x140&quality=95&direct=true&ttype=input&src=https%3A%2F%2Fimgauto-phinf.pstatic.net%2F20211206_48%2Fauto_1638770256656QvULO_PNG%2F20211206145727_kcRlMkpK.png"
+                     class="d-block w-100" alt="..." id="img-rtan8">
+                <div class="carousel-caption d-none d-md-block">
+                    <button style="float: right;" id="carbackname9" onclick="location.href='/community/colorado'" class="btn btn-link">2022 쉐보레 콜로라도 자세히보기
+                    </button>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+</body>
+</html>

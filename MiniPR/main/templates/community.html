@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상세페이지</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- ajax import -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- css파일의 경로 설정 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='community.css')}}">
+
+    <!-- script 파일의 경로 설정  -->
+    <script src="{{ url_for('static', filename='community.js')}}"></script>
+
+    <!-- google font import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Nanum+Gothic&family=Parisienne&family=Sunflower:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+
+
+</head>
+
+<body>
+    <div class="nav" id="nav">
+        <div class="nav__logo"><a href="/" class="nav__logo_a"></a></div>
+        <ul class="primary-navigation-login">
+            <li class="navigation-login"><a href="/" class="navigation-login_a">로그인</a></li>
+            <li class="navigation-join"><a href="/sign_up" class="navigation-join_a">회원가입</a></li>
+        </ul>
+    </div>
+
+    <div class="wrap_flex_container">
+
+        <div class="column1_container">
+            <div class="img_box"><img src="{{car[0]['image']}}">
+            </div>
+
+            <div class="desc">
+                <div class="desc__form">
+                    <div id="db_index" class="desc__name">{{car[0]['carname']}}</div>
+                    <p class="desc__tag1">파워트레인/성능</p>
+                    <div class="desc__meca1"> {{car[0]['car_desc1']}}</div>
+                    <p class="desc__tag2">외관 사양</p>
+                    <div class="desc__meca2">{{car[0]['car_desc2']}}</div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="column2_container">
+
+            <div class="comment_input" id="comment_input">
+                <article class="media">
+                    <!-- 서버의 해당 url route로 데이터를 보낸다. -->
+                    <div class="media-content">
+                        <div class="field">
+                            <p class="control">
+                                <textarea id="comment_give" class="textarea" placeholder="Add a comment..."></textarea>
+                            </p>
+                        </div>
+                        <nav class="level">
+                            <div class="level-left">
+                                <div class="level-item">
+                                    <a onclick="comment_post()" class="button is-info">Submit</a>
+                                </div>
+                            </div>
+
+
+                        </nav>
+                    </div>
+                </article>
+            </div>
+
+            <div id="comment_container" class=".comment_container">
+                {% set test = car[0]['comment']%}
+                {%for et in test%}
+                    <article class="media">
+                        <div class="media-content">
+                            <div class="content">
+
+                                <p>
+                                    <strong id ="test"> {{et['user_name']}} </strong> <small>{{et['email']}}</small> <small>{{et['now']}}</small>
+                                    <br>
+                                    {{et['comment']}}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="media-right">
+                            <button on_click = "comment_delete()" id = delete class="delete"></button>
+                        </div>
+                    </article>
+                {%endfor%}
+            </div>
+
+        </div>
+</body>
+
+</html>
