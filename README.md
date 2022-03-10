@@ -14,4 +14,4 @@
     <img width="50%" src="https://user-images.githubusercontent.com/89297942/156976498-1009bfff-8d77-4edf-8ed0-d832cf4c0d43.png"/><br>
       <h3>필수 : 진자 서버사이드 렌더링 , jwt 사용한 로그인 기능 구현</h3><br>
   <h2>5. public github repo 주소</h2>
-    https://github.com/hanghae99-6-2/MiniPR
+    https://github.com/hanghae99-6-2/MiniPR2
