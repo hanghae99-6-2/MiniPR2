@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from main import app
+  File "/home/ubuntu/MiniPR_2team/final/MiniPR2/MiniPR/main/__init__.py", line 5, in <module>
+    from bs4 import BeautifulSoup
+ModuleNotFoundError: No module named 'bs4'
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from main import app
+  File "/home/ubuntu/MiniPR_2team/final/MiniPR2/MiniPR/main/__init__.py", line 5, in <module>
+    from bs4 import BeautifulSoup
+ModuleNotFoundError: No module named 'bs4'

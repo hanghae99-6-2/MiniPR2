@@ -33,7 +33,7 @@ def sign_in():
             'id': username_receive,
             'exp': datetime.utcnow() + timedelta(seconds=60 * 60 * 24)  # 로그인 24시간 유지
         }
-        token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')                           # jwt 토큰을 발행. 놀이공원 자유입장권과 같은 것. 어떤 사람이 언제까지 입장이 유효하다를 적시해줌.
+        token = jwt.encode(payload, SECRET_KEY, algorithm='HS256').decode('utf-8')                          # jwt 토큰을 발행. 놀이공원 자유입장권과 같은 것. 어떤 사람이 언제까지 입장이 유효하다를 적시해줌.
                                                                                              # 토큰이 제대로 발행되었는지 확인하려면, 오른쪽 마우스 검사 누르고, 개발자 콘솔을 열면 Application탭을 눌러서 cookies가 나와 있음.
         return jsonify({'result': 'success', 'token': token})
         # 찾지 못하면,
